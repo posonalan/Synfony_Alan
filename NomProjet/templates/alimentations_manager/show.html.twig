@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alimentations{% endblock %}
+
+{% block body %}
+    <h1>Alimentations</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ alimentation.id }}</td>
+            </tr>
+            <tr>
+                <th>LibelleAliment</th>
+                <td>{{ alimentation.libelleAliment }}</td>
+            </tr>
+            <tr>
+                <th>TypeAliment</th>
+                <td>{{ alimentation.TypeAliment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('alimentations_manager_index') }}">back to list</a>
+
+    <a href="{{ path('alimentations_manager_edit', {'id': alimentation.id}) }}">edit</a>
+
+    {{ include('alimentations_manager/_delete_form.html.twig') }}
+{% endblock %}
